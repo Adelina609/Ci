@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1033408913254",
+    "firebase_url": "https://cicd-a6bb0.firebaseio.com",
+    "project_id": "cicd-a6bb0",
+    "storage_bucket": "cicd-a6bb0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1033408913254:android:30781b56dc8a03c4ffb2a7",
+        "android_client_info": {
+          "package_name": "ru.kpfu.itis.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1033408913254-dftc0b4r7aard7fa5qraku0nd1dhtitr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUbnjMqwhPx-u5WExCrnpmnnIJTadudWs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1033408913254-dftc0b4r7aard7fa5qraku0nd1dhtitr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

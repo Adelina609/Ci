@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.appdistribution'
 
 android {
     compileSdkVersion 29
@@ -20,6 +20,28 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            firebaseAppDistribution {
+                releaseNotesFile="${project.rootDir}/${project.getName()}/src/main/java/releasenotes.txt"
+                testers="adelinarid609@gmail.com"
+            }
+        }
+    }
+}
+
+
+detekt {
+    version = "1.0.0-RC12"
+    input = files("${project.rootDir}/${project.getName()}/src/main/java")
+    config = files("${project.rootDir}/app/detekt-config.yml")
+    filters = ".*test.*,.*/resources/.*,.*/tmp/.*"
+    reports {
+        xml {
+            enabled = true
+            destination = file("build/reports/detekt.xml")
+        }
+        html {
+            enabled = true
+            destination = file("build/reports/detekt.html")
         }
     }
 }
@@ -33,4 +55,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.0.0.RC8"
 }
+
+apply plugin: 'com.google.gms.google-services'
